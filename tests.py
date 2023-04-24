@@ -7,17 +7,14 @@ class FlaskAppTests(unittest.TestCase):
     def setUp(self):
         tested_app.config['TESTING'] - True
         self.app = tested_app.app.test_client()
-        
+    
     def test_get(self):
         r = self.app.get('/')
         self.assertEqual(r.data.decode('UTF-8'), 'У меня получилось!')
-        
+
     def test_post(self):
         r = self.app.post('/')
         self.assertEqual(r.status_code, 405)
-        
-
 
 if __name__ == 'main':
     unittest.main()
-    
