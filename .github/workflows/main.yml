@@ -60,6 +60,6 @@ jobs:
        source: "docker-compose.yaml, nginx/default.conf"
        target: "~/app/"
        script: |
-         sudo docker pull logmsmir/docker_flask_app
-         sudo docker stop $(sudo docker ps -a -q)
-         sudo docker run --rm -d -p 5000:5000 logmsmir/docker_flask_app
+         docker pull logmsmir/docker_flask_app
+         docker stop $(docker ps -a -q)
+         docker run --rm -d -p 5000:5000 logmsmir/docker_flask_app
